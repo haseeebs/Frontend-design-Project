@@ -1,0 +1,15 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set full height and width for HTML and body */
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+  
