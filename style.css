@@ -50,20 +50,35 @@ main {
     width: 100%;
     position: relative;
     line-height: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     & .counter {
+      opacity: 0;
       width: 25%;
-      text-align: center;
+      line-height: 1.5;
+
+      text-align: right;
+      padding-right: 4.5vw;
+
       position: absolute;
       left: 0;
+
       font-family: "silkserif-regular";
       font-size: 3.2vw;
+
       z-index: 1000;
     }
 
     & #loader-top {
       position: relative;
       width: 100%;
+
+      & .loader-text {
+        overflow: hidden;
+      }
 
       & h1 {
         font-size: 7.2vw;
@@ -83,6 +98,7 @@ main {
       }
     }
     & #loader-bottom {
+      opacity: 0;
       width: 100%;
       margin-top: 5vw;
 
@@ -132,10 +148,9 @@ main {
       }
 
       & #loader-bottom {
-
         & p {
           margin-left: 0%;
-          font-size: 3.5vw;
+          font-size: 2.5vw;
         }
       }
     }
