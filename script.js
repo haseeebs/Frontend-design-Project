@@ -4,8 +4,9 @@ const h1 = document.querySelectorAll('.loader-text h1');
 const loaderBottom = document.querySelector('#loader-bottom');
 const nowKeyWord = document.querySelector('[data-word="now"]');
 const preloader = document.querySelector('.preloader');
+const cursor = document.querySelector('.cursor');
+const hero = document.querySelectorAll('.hero-section .hero p');
 
-// Function to count up to 100
 const countUp = () => {
   let count = 0;
   const interval = setInterval(() => {
@@ -35,7 +36,6 @@ const startAnimation = () => {
     opacity: 1,
     onStart: () => {
       countUp();
-      changeStyle();
     },
   })
   .to(h1, {
@@ -49,8 +49,24 @@ const startAnimation = () => {
   })
   .to(preloader, {
     y: '-100%',
-    opacity: 0,
-  });
+  })
+  .from(hero, {
+    y: 100,
+    delay: 0.2,
+    duration: 0.5,
+    stagger: 0.1
+  })
 };
 
 startAnimation();
+
+const cursorAnimation = () => {
+  document.addEventListener('mousemove', (event) => {
+    gsap.to(cursor, {
+      top: event.y,
+      left: event.x
+    })
+  });
+};
+
+cursorAnimation();
