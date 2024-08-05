@@ -32,30 +32,31 @@ const startAnimation = () => {
     duration: 0.6,
     stagger: 0.25,
   })
-  .to([loaderBottom, counter], {
-    opacity: 1,
-    onStart: () => {
-      countUp();
-    },
-  })
-  .to(h1, {
-    delay: 2,
-    opacity: 0,
-    duration: 1.5,
-    onStart: () => {
-      counter.style.opacity = 0;
-      loaderBottom.style.opacity = 0;
-    },
-  })
-  .to(preloader, {
-    y: '-100%',
-  })
-  .from(hero, {
-    y: 100,
-    delay: 0.2,
-    duration: 0.5,
-    stagger: 0.1
-  })
+    .to([loaderBottom, counter], {
+      opacity: 1,
+      onStart: () => {
+        countUp();
+      },
+    })
+    .to(h1, {
+      delay: 2,
+      opacity: 0,
+      duration: 1.5,
+      onStart: () => {
+        counter.style.opacity = 0;
+        loaderBottom.style.opacity = 0;
+      },
+    })
+    .to(preloader, {
+      y: '-100%',
+    })
+    .from([hero, '.page2 section'], {
+      y: 100,
+      delay: 0.25,
+      duration: 2.5,
+      stagger: 0.1,
+      ease: "elastic.out(1,0.3)"
+    })
 };
 
 startAnimation();

@@ -31,6 +31,9 @@ body {
   width: 100%;
   font-family: "Plain-regular";
   position: relative;
+  & ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .cursor {
@@ -56,6 +59,8 @@ body {
   background-color: #0b0b0b;
   padding: 6vw 5vw;
   transition: 0.5s cubic-bezier(1, 0.04, 0.54, 1.07);
+  /* transition-delay: -0.5s; */
+  z-index: 9999;
 
   & .container {
     height: 100%;
@@ -148,6 +153,7 @@ main {
   height: 100%;
   width: 100%;
   padding: 0vw 5vw;
+  overflow-x: hidden;
 
   color: white;
   background-color: #151515;
@@ -224,11 +230,64 @@ main {
   }
 }
 
+.page2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 5vw;
+  padding: 5vw 0vw;
+  padding-left: 25%;
+}
+
+& section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  & .play {
+    position: absolute;
+    height: 10.5vw;
+    width: 10.5vw;
+    background-color: rgb(255, 166, 61);
+    border-radius: 50%;
+    right: 12.5%;
+    top: -12%;
+    z-index: 100;
+
+    & i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5vw;
+    }
+  }
+
+  & img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 108%;
+    object-fit: cover;
+    z-index: 99;
+  }
+
+  & video {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 108%;
+    object-fit: cover;
+    z-index: 98;
+  }
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .preloader {
     display: flex;
     flex-direction: column;
+    transition: 1s cubic-bezier(1, 0.04, 0.54, 1.07);
 
     & .container {
       display: flex;
@@ -263,6 +322,53 @@ main {
         & p {
           margin-left: 0;
           font-size: 2.5vw;
+        }
+      }
+    }
+  }
+
+  main {
+    & .page1 {
+      height: 50%;
+
+      & .hero-section {
+        margin-top: 10vw;
+        margin-left: 0;
+
+        & .hero {
+          font-size: 10vw;
+          line-height: 10vw;
+        }
+      }
+    }
+
+    & .page2 {
+      margin-top: 15vw;
+      padding-left: 0;
+
+      & section {
+        & .play {
+          height: 25vw;
+          width: 25vw;
+
+          right: 50%;
+          top: 25%;
+
+          & i {
+            font-size: 5vw;
+          }
+        }
+
+        & img {
+          left: -5vw;
+          height: 50%;
+          width: 112%;
+        }
+
+        & video {
+          left: -5vw;
+          height: 50%;
+          width: 112%;
         }
       }
     }
