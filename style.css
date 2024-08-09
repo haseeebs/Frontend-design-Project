@@ -207,25 +207,39 @@ main {
   }
 
   & .hero-section {
-    width: 75%;
     margin-top: 5vw;
-    margin-left: auto;
-    user-select: none;
+    display: flex;
 
-    & .hero {
-      font-size: 7.5vw;
-      line-height: 7.5vw;
-      text-transform: uppercase;
-      overflow: hidden;
-      cursor: context-menu;
+    & .hero-left {
+      flex: 0 0 25%;
+      max-width: 25%;
+      font-size: 3.5vw;
+      font-family: "silkserif-regular";
 
-      & p {
-        & .hero-text {
-          transition: 0.25s color ease-in-out;
+      text-align: right;
 
-          &:hover {
-            -webkit-text-stroke: 1px white;
-            color: transparent;
+      padding-right: 2.5vw;
+    }
+
+    & .hero-right {
+      flex: 0 0 75%;
+      max-width: 75%;
+    
+      & .hero {
+        font-size: 7.5vw;
+        line-height: 7.5vw;
+        text-transform: uppercase;
+        overflow: hidden;
+        cursor: context-menu;
+  
+        & p {
+          & .hero-text {
+            transition: 0.25s color ease-in-out;
+  
+            &:hover {
+              -webkit-text-stroke: 1px white;
+              color: transparent;
+            }
           }
         }
       }
@@ -289,8 +303,24 @@ main {
   position: relative;
   min-height: 100%;
   width: 100%;
-  padding-left: 25%;
   color: rgba(255, 255, 255, 0.9);
+  display: flex;
+
+  & .page4-left {
+    flex: 0 0 25%;
+    max-width: 25%;
+    font-size: 3.5vw;
+    font-family: "silkserif-regular";
+
+    text-align: right;
+
+    padding-right: 2.5vw;
+  }
+
+  & .page4-right {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
 
   & .about-section-headline {
     position: relative;
@@ -300,6 +330,7 @@ main {
     & h1 {
       font-size: 7.5vw;
       font-weight: 300;
+      line-height: 1;
       text-transform: uppercase;
     }
 
@@ -327,7 +358,7 @@ main {
     height: 150%;
 
     & .page4-image {
-      height: 100%;
+      height: 35%;
       width: 120%;
 
       & img {
@@ -527,22 +558,12 @@ footer {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       padding-bottom: 5vw;
-
-      & .footer-main-left {
-      }
-      & .footer-main-middle {
-      }
-      & .footer-main-right {
-      }
     }
 
     & address {
       font-size: 1.8vw;
       font-family: "Plain-regular";
       font-style: normal;
-    }
-
-    & .footer-bottom {
     }
   }
 }
@@ -605,6 +626,13 @@ footer {
       & .hero-section {
         margin-top: 10vw;
         margin-left: 0;
+        flex-direction: column;
+
+        & .hero-left {
+          text-align: left;
+          margin-right: 0vw;
+          margin-bottom: 2.5vw;
+        }
 
         & .hero {
           font-size: 10vw;
@@ -614,10 +642,14 @@ footer {
     }
 
     & .page2 {
-      margin-top: 15vw;
-      padding-left: 0;
+      height: 50%;
+      margin-top: 20vw;
+      flex-direction: column;
 
       & section {
+        flex: 0 0 100%;
+        max-width: 100%;
+
         & .play {
           height: 25vw;
           width: 25vw;
@@ -632,13 +664,13 @@ footer {
 
         & img {
           left: -5vw;
-          height: 50%;
+          height: 100%;
           width: 112%;
         }
 
         & video {
           left: -5vw;
-          height: 50%;
+          height: 100%;
           width: 112%;
         }
       }
@@ -650,6 +682,18 @@ footer {
       width: 100%;
       color: rgba(255, 255, 255, 0.9);
       padding-left: 0%;
+      flex-direction: column;
+      margin-top: 10vw;
+
+      & .page4-left {
+        text-align: left;
+        margin-bottom: 5vw;
+      }
+
+      & .page4-right {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
 
       & .about-section-headline {
         position: relative;
@@ -677,6 +721,7 @@ footer {
       & [data-word="first-paragraph"] {
         padding-bottom: 6vw;
         font-size: 5.5vw;
+        width: 75%;
       }
 
       & .page4-bottom {
@@ -700,6 +745,7 @@ footer {
             font-size: 3.5vw;
             width: 75%;
             line-height: 1.5;
+            padding-left: 0;
           }
         }
       }
