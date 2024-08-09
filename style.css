@@ -60,6 +60,8 @@ body {
   padding: 6vw 5vw;
   transition: 0.5s cubic-bezier(1, 0.04, 0.54, 1.07);
   /* transition-delay: -0.5s; */
+  user-select: none;
+  cursor: none;
   z-index: 9999;
 
   & .container {
@@ -208,6 +210,7 @@ main {
     width: 75%;
     margin-top: 5vw;
     margin-left: auto;
+    user-select: none;
 
     & .hero {
       font-size: 7.5vw;
@@ -437,6 +440,7 @@ main {
 
     & P {
       font-size: 7vw;
+      user-select: none;
 
       &::before {
         content: "—";
@@ -467,6 +471,79 @@ main {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+
+footer {
+  height: 90%;
+  width: 100%;
+  display: flex;
+
+  & .footer-left {
+    max-width: 25%;
+    font-size: 3.5vw;
+    font-family: "silkserif-regular";
+
+    text-align: right;
+
+    padding-right: 2.5vw;
+    flex: 0 0 25%;
+  }
+
+  & .footer-right {
+    flex: 0 0 75%;
+    max-width: 75%;
+
+    & .footer-border {
+      display: block;
+      height: 1px;
+      background-color: white;
+      margin: 2vw 0vw;
+    }
+
+    & h1 {
+      font-size: 7.5vw;
+      font-weight: 100;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    & h6 {
+      font-size: 1.2vw;
+      font-weight: 100;
+      margin-bottom: 2vw;
+    }
+
+    & ul {
+      list-style: none;
+
+      & li {
+        font-size: 1.8vw;
+        margin-bottom: -0.2em;
+      }
+    }
+
+    & .footer-main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-bottom: 5vw;
+
+      & .footer-main-left {
+      }
+      & .footer-main-middle {
+      }
+      & .footer-main-right {
+      }
+    }
+
+    & address {
+      font-size: 1.8vw;
+      font-family: "Plain-regular";
+      font-style: normal;
+    }
+
+    & .footer-bottom {
+    }
   }
 }
 
@@ -679,11 +756,70 @@ main {
     & .page5 {
       height: fit-content;
       & .scrollbar-container {
-        height: 7vh;
+        height: 8vh;
 
         & P {
-          font-size: 12vw;
+          font-size: 10vw;
         }
+      }
+    }
+
+    & footer {
+      flex-direction: column;
+      padding: 15vw 0vw;
+
+      & .footer-left {
+        text-align: left;
+        padding-right: 0vw;
+        flex: 0 0 8%;
+        font-size: 4.5vw;
+      }
+
+      & .footer-right {
+        & .footer-border {
+          margin: 0vw 0vw;
+        }
+
+        & h6 {
+          font-size: 4.5vw;
+          font-weight: 100;
+          margin-bottom: 5vw;
+        }
+
+        & h1 {
+          font-size: 8.5vw;
+          margin-bottom: 10vw;
+        }
+
+        & ul {
+          & li {
+            font-size: 6vw;
+            margin-bottom: -0.2em;
+          }
+        }
+
+        & .footer-main {
+          grid-template-columns: 1fr;
+          padding: 15vw 0vw;
+          color: rgb(255, 255, 255);
+
+          & .footer-main-left {
+            margin-bottom: 10vw;
+          }
+          & .footer-main-middle {
+            margin-bottom: 10vw;
+          }
+          & .footer-main-right {
+          }
+        }
+
+        & address {
+          font-size: 6vw;
+        }
+      }
+
+      & .footer-bottom {
+        padding: 10vw 0vw;
       }
     }
   }
